@@ -30,7 +30,7 @@
             $pdo->exec($sql);
 
             //写入新数据
-            $expire = time();
+            $expire = time() + 7200;
             $sql = "insert into p_tokens (`uid`,`token`,`expire`) 
 values ({$row['user_id']},'{$token}',$expire)";
             $pdo->exec($sql);
